@@ -1,0 +1,1 @@
+select users.firstname, users.lastname, users.username, friends.from_username, friends.to_username, friends.status from users, friends where users.firstname like 'rac%';

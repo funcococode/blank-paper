@@ -1,0 +1,362 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Montserrat",Arial, Helvetica, sans-serif;
+  -webkit-column-break-inside: avoid;
+  /* Chrome, Safari, Opera */
+  /* Firefox */
+  break-inside: avoid;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+body {
+  height: 100vh;
+  background: #efefef;
+  overflow-x: hidden;
+}
+
+body.stopScroll {
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+.container {
+  position: relative;
+  -webkit-transition: all cubic-bezier(0.19, 1, 0.22, 1) 3s;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 3s;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 1fr;
+      grid-template-columns: 2fr 1fr;
+  gap: 50px;
+}
+
+.container.mainLanding.close {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+#name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  display: -ms-inline-grid;
+  display: inline-grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.topImgWrapper {
+  position: relative;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+#homeImg, .imgSkel {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+}
+
+.imgSkel {
+  opacity: 0.8;
+}
+
+.skeleton {
+  -webkit-animation: skeleton-loading 1s cubic-bezier(0.23, 1, 0.32, 1) infinite alternate;
+          animation: skeleton-loading 1s cubic-bezier(0.23, 1, 0.32, 1) infinite alternate;
+}
+
+.text-skeleton {
+  display: inline-block;
+  width: 100%;
+  height: 1.5rem;
+  border-radius: 50px;
+}
+
+.text-skeleton:last-child {
+  width: 80%;
+}
+
+@-webkit-keyframes skeleton-loading {
+  0% {
+    background: #a3b8c2;
+  }
+  100% {
+    background: #e0e7eb;
+  }
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background: #a3b8c2;
+  }
+  100% {
+    background: #e0e7eb;
+  }
+}
+
+.sectionHeading {
+  margin: 0 0 50px 0;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  padding: 15px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-transform: capitalize;
+  color: white;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
+  z-index: 1000;
+}
+
+.homeTabGroup {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 100px;
+}
+
+#latestGrid {
+  margin-top: 50px;
+  -webkit-column-count: 3;
+          column-count: 3;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+}
+
+.newsCard {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  display: -ms-grid;
+  display: grid;
+  gap: 20px;
+  background: white;
+}
+
+.newsCard .text-skeleton {
+  height: 0.9rem;
+}
+
+.newsCard:hover img {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+}
+
+.headline {
+  font-family: 'Merriweather';
+  font-size: 1.5rem;
+}
+
+.newsImg {
+  width: 100%;
+  max-height: 300px;
+}
+
+.newsImg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+
+#allFriendsContainer {
+  list-style: none;
+  display: -ms-grid;
+  display: grid;
+  gap: 5px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 100px;
+}
+
+#allFriendsContainer li.friend {
+  background: #061f56;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  text-transform: capitalize;
+}
+
+#userProfileArea {
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 3rem;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  -webkit-transition: all cubic-bezier(0.19, 1, 0.22, 1) 3s;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 3s;
+  z-index: 1;
+  text-transform: capitalize;
+}
+
+#userProfileArea.open {
+  left: 0%;
+}
+
+#searchResult {
+  max-height: 400px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  visibility: hidden;
+  position: absolute;
+  right: 55px;
+  top: 120px;
+  z-index: 1001;
+}
+
+.sur-fullname {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.sur-username, .sur-email {
+  color: rgba(0, 0, 0, 0.637);
+  font-size: 0.9rem;
+}
+
+.upaFieldWrapper {
+  position: relative;
+  width: 50%;
+}
+
+.upaFieldWrapper * {
+  -webkit-transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.upaFieldWrapper label {
+  position: absolute;
+  top: -10%;
+  left: 0;
+  font-size: 0.8rem;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+.upaFieldWrapper:hover::after {
+  position: absolute;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  content: "\f303";
+  right: 50px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: rgba(218, 56, 56, 0.452);
+  font-size: 1.1rem;
+}
+
+.upaFieldWrapper.closed .upa-save-change {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.upaFieldWrapper.closed input[id^='upa-'] {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.upaFieldWrapper.closed:hover::after {
+  color: #0056fb;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  content: "\f303";
+}
+
+.upaFieldWrapper .upa-save-change {
+  opacity: 1;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.paperDetails {
+  -webkit-columns: 300px 2;
+          columns: 300px 2;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+  width: 100%;
+}
+
+.paperDetails p {
+  font-size: 2rem;
+}
+
+.paperDetails p:last-child {
+  text-align: right;
+  padding-right: 50px;
+}
+
+@media (max-width: 768px) {
+  #latestGrid {
+    -webkit-column-count: 2;
+            column-count: 2;
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    padding: 20px;
+  }
+  #name {
+    display: block;
+    font-size: 1.2rem;
+    width: 100%;
+    margin-left: 0;
+  }
+  #homeImg, .imgSkel {
+    display: none;
+  }
+  #latestGrid {
+    -webkit-column-count: 1;
+            column-count: 1;
+  }
+}
+/*# sourceMappingURL=home.css.map */

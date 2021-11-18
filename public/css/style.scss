@@ -1,0 +1,254 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: "Montserrat",Arial, Helvetica, sans-serif;
+}
+body{
+    height: 100vh;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    &:hover{
+        color: #0056fb;
+    }
+}
+
+.container{
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    height: 100%;
+}
+
+.left{
+    display: grid;
+    grid-template-rows:2fr 10fr;
+    padding:0 8em;
+}
+
+
+nav{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding:15px 0;
+
+    ul{
+        list-style-type: none;
+        justify-self: end;
+
+        li{
+            border:2px solid #0056fb;
+            color: #0056fb;
+            padding:5px 30px;
+            font-size: 15px;
+            border-radius: 3px;
+            font-weight: 500;
+            display: none;
+        }
+    }
+}
+
+#logo{
+    font-size: 1.3rem;
+    color: #0056fb;
+    font-weight: 900;
+}
+
+.formArea{
+    align-self: center;
+    display: grid;
+
+    .formTip{
+        margin-top: 20px;
+        font-size: 15px;
+        font-weight: 600;
+        color: rgba(0, 0, 0, 0.473);
+    }
+}
+
+#formHeading{
+    font-size: 3em;
+}
+
+#signupErrorsSection,#loginErrorsSection{
+    padding:20px 0;
+    li{
+        display: inline-block;
+        list-style: none;
+        background:#ec537d;
+        color: white;
+        font-size: 0.9rem;
+        padding:15px;
+        margin: 10px 10px 0 0;
+        width: fit-content;
+        border-radius: 5px;
+    }
+}
+
+.fieldWrapper{
+    margin-bottom: 25px;
+    position: relative;
+    &:first-child{
+        margin-top: 30px;
+    }
+    
+    .fieldTip{
+        margin-top: 10px;
+        position: absolute;
+        font-size: 12px;
+        font-weight: 600;
+        color: rgba(0, 0, 0, 0.473);
+        opacity: 0;
+        transition: opacity 0.25s;
+    }
+
+    input{
+        border:2px solid rgba(0, 0, 0, 0.199);
+        width: 100%;
+        padding:15px 25px;
+        font-size: 18px;
+        border-radius: 8px;
+        transition: all 0.25s;
+        
+        &:focus{
+            border:2px solid #0056fb;
+            +label{
+                color: #0056fb;
+            }
+
+            ~.fieldTip{
+                opacity: 1;
+            }
+        }
+        
+        &:not(:placeholder-shown){
+
+            &:valid{
+                border: 2px solid #00fb9b;
+                color: #00fb92;
+                +label{
+                    color: #00fb9b;
+                    font-size: 12px;
+                }
+            }
+
+            +label{
+                font-size: 15px;
+                top:0px;
+                left:15px;
+                background: white;
+                padding:0 10px
+            }
+        }
+    }
+
+    label{
+        position: absolute;
+        left:25px;
+        top:50%;
+        user-select: none;
+        transform: translateY(-50%);
+        color: rgba(0, 0, 0, 0.473);
+        font-weight: 500;
+        transition: all 0.25s;
+        pointer-events: none;
+    }
+
+    
+}
+
+.formInline{
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    grid-gap: 25px;
+    margin-top: 50px;
+    .fieldWrapper{
+        margin-top: 0;
+        width:100%
+    }
+
+}
+
+#signupBtn,#loginBtn{
+    width:100%;
+    padding:10px;
+    font-size: 15px;
+    background:#0056fb;
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.successMsg{
+    width:100%;
+    background: white;
+    position: absolute;
+    top:20%;
+    bottom:20%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: calc(1.2*1.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s ease-in-out;
+}
+
+.successMsg.visible{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.wrapper{
+    transition: all 0.25s;
+    position: relative;
+}
+.wrapper.loginform{
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+}
+
+
+.login{
+    .wrapper.signupform{
+        visibility: hidden;
+        opacity: 0;
+    }
+    .wrapper.loginform{
+        visibility: visible;
+        opacity: 1;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.right{
+    display: grid;
+    height: 100%;
+    overflow: hidden;    
+    img{
+        width: 100%;
+        height:100%;
+        object-fit: cover;
+    }
+}

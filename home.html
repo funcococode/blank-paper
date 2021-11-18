@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <nav class="navbar p-6">
+            <div id="navMenu" class="navbar-menu">
+                <div class="navbar-start">
+                    <a id="name" class="text-xl has-text-link font-medium text-black">BlankPaper.</a>
+                    
+                </div>
+                <div class="navbar-end">
+                    
+                    <div class="navbar-item">
+                        <input type="text" name="userSearchBar" id="searchBar" class="input">
+                    </div>
+                    
+                    <span class="navbar-item">
+                        <a href="/logout" class="button is-danger is-light" id="logoutBtn">
+                            <span class="icon">
+                                <i class="fa fa-sign-out-alt"></i>
+                            </span>
+                        </a>
+                    </span>
+                    <span class="navbar-item">
+                        <a class="button is-link is-light">
+                            <span class="icon">
+                                <i class="fas fa-user"></i>
+                            </span>
+                            <!-- <span>Profile</span>/ -->
+                        </a>
+                    </span>
+                    <div class='navbar-item' id="profileImg">
+                        <a class="button is-primary is-light">
+                            <span class="icon">
+                                <i class="fas fa-bars"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+    </nav>
+    <ul class="box has-background-light" id="searchResult"></ul>
+    <section class="container mainLanding p-6">
+        
+        <div id="container-left">
+
+            <section class="hero is-link is-medium mb-6">
+                <div class="hero-body">
+                    <p class="title">
+                        Danger hero
+                    </p>
+                    <p class="subtitle">
+                        Danger subtitle
+                    </p>
+                </div>
+            </section>
+            <h1 class="sectionHeading tag is-primarytag is-primary">Latest Briefings</h1>
+            <div class="tabs is-centered is-toggle is-fullwidth">
+                <ul>
+                    <li class="homeCategoryTabs"><a onclick="latestNews('entertainment')">Entertainment</a></li>
+                    <li class="homeCategoryTabs"><a onclick="latestNews('health')">Health</a></li>
+                    <li class="homeCategoryTabs"><a onclick="latestNews('sports')">Sports</a></li>
+                    <li class="homeCategoryTabs is-active"><a onclick="latestNews('general')">General</a></li>
+                    <li class="homeCategoryTabs"><a onclick="latestNews('science')">Science</a></li>
+                    <li class="homeCategoryTabs"><a onclick="latestNews('business')">Business</a></li>
+                    <li class="homeCategoryTabs"><a onclick="latestNews('technology')">Technology</a></li>
+                </ul>
+            </div>
+    
+    
+            <div id="latestGrid"></div>
+        </div>
+        <div id="container-right">
+            <h1 class="sectionHeading tag is-primary">Friends</h1>
+            <ul id="allFriendsContainer"></ul>
+        </div>
+
+    </section>
+    
+    <section id="userProfileArea" class="p-6 container">
+        <div class="upa-wrapper p-6">
+            <span class="tag is-primary mx-0 px-2">Personal Information</span>
+            <div class="upaFieldWrapper closed columns is-4 my-6 px-3" style="gap:25px;">
+                <label class="px-3" for="fullname">Fullname</label>
+                <input type="text" id="upa-fullname" name="fullname" class="input is-primary column" readonly>
+                <button class='upa-save-change button is-link is-2 py-2 column' data-field="fullname">Save</button>
+            </div>
+            <div class="upaFieldWrapper closed columns is-4 my-6 px-3" style="gap:25px;">
+                <label class="px-3" for="fullname">Username</label>
+                <input type="text" id="upa-username" name="username" class="input is-primary column" readonly>
+                <button class='upa-save-change button is-link is-2 py-2 column' data-field="username">Save</button>
+            </div>
+            <div class="upaFieldWrapper closed columns is-4 my-6 px-3" style="gap:25px;">
+                <label class="px-3" for="fullname">Email</label>
+                <input type="text" id="upa-email" name="email" class="input is-primary column" readonly>
+                <button class='upa-save-change button is-link is-2 py-2 column' data-field="email">Save</button>
+            </div>
+            <div class="upaFieldWrapper closed columns is-4 my-6 px-3" style="gap:25px;">
+                <label class="px-3" for="password">Password</label>
+                <input type="password" id="upa-password" name="password" class="input is-primary column" readonly>
+                <button class='upa-save-change button is-link is-2 py-2 column' data-field="password">Save</button>
+            </div>
+        </div>
+        <div id="paperDetails" class="paperDetails">
+            <p>
+                286 Papers Published
+            </p>
+            <p>
+                1065 Papers Read
+            </p>
+        </div>
+    </section>
+
+    <template id="skeleton-card-template">
+        <div class="newsCard">
+            <h2 class="headline">
+                <div class="skeleton text-skeleton"></div>
+                <div class="skeleton text-skeleton"></div>
+            </h2>
+            <p class="desc">
+                <div class="skeleton text-skeleton"></div>
+                <div class="skeleton text-skeleton"></div>
+                <div class="skeleton text-skeleton"></div>
+            </p>
+        </div>
+    </template>
+    <script src="js/home.js"></script>
+</body>
+</html>

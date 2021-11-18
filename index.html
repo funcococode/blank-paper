@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blank Paper</title>
+
+    <script src="js/main.js" defer></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <nav>
+                <h1 id='logo'>BlankPaper.</h1>
+                <ul>
+                    <li>Login</li>
+                </ul>
+            </nav>
+            <div class="formArea">
+                <div class="wrapper signupform">
+
+                    <h2 id='formHeading'>Sign up</h2>
+                    <form id='signupForm'>
+                        <div class="formInline">
+                            <div class="fieldWrapper">
+                                <input type="text" id='firstname' name='firstname' placeholder=" ">
+                                <label for="firstname">Firstname</label>
+                            </div>
+                            <div class="fieldWrapper">
+                                <input type="text" id='lastname' name='lastname' placeholder=" ">
+                                <label for="lastname">Lastname</label>
+                            </div>
+                        </div>
+                        <div class="fieldWrapper">
+                            <input type="email" name='semail' id='semail' placeholder=" ">
+                            <label for="semail">Email Address</label>
+                        </div>
+                        <div class="formInline" style="margin-top: 0;">
+                            <div class="fieldWrapper">
+                                <input type="text" name='susername' id='susername' placeholder=" ">
+                                <label for="susername">Username</label>
+                                <p class='fieldTip'></p>
+                            </div>
+                            <div class="fieldWrapper">
+                                <input type="password" name='spass' id='spass' placeholder=" ">
+                                <label for="spass">Password</label>
+                                <p class='fieldTip'>Password must be atleast 5 characters long.</p>
+                            </div>
+                        </div>
+                        <div id="signupErrorsSection"></div>
+                        
+                        <div class="successMsg" id="successMsg">
+                            <span style="color:#0056fb">Congratulations!</span><br/>
+                            Your Account has been created successfully.<br/>
+                            <p style="color:rgba(0, 0, 0, 0.315);font-size: 1rem;margin-top: 15px;">
+                                Login to your account by clicking the login button below.
+                                Remember your credentials and don't tell them to anybody.
+                            </p>
+                        </div>
+    
+                        <button id='signupBtn'>Sign up</button>
+    
+                        <p class="formTip">Already a member? <a class='formTipBtn' id='aLogin'>Login Here.</a></p>
+                    </form>
+                </div>
+
+
+                <div class="wrapper loginform">
+                    <h2 id='formHeading'>Login</h2>
+                    <form  id='loginForm'>
+                        <div class="fieldWrapper">
+                            <input type="text" name='lusername' id='lusername' placeholder=" ">
+                            <label for="lusername">Username</label>
+                        </div>
+                        <div class="fieldWrapper">
+                            <input type="password" name='lpass' id='lpass' placeholder=" ">
+                            <label for="lpass">Password</label>
+                        </div>
+    
+                        <div id="loginErrorsSection"></div>
+                        
+                        <button id='loginBtn'>Login</button>
+    
+                        <p class="formTip">Not a member yet? <a class='formTipBtn' id='aSignup'>Create a new account.</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <img src="https://source.unsplash.com/1600x1600/?abstract" alt="">
+        </div>
+    </div>
+</body>
+</html>
